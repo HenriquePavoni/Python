@@ -1,0 +1,32 @@
+i = 0
+maior = 0
+homens = 0
+mulheres = 0
+while True:
+    sexo = str(input(f'\nInsira o genero da pessoa {i + 1} [M/F]: ')).lower().strip()
+    while not (sexo == 'f' or sexo == 'm'):
+        sexo = str(input(f'Genero nao encontrado no banco de dados. \nFavor Insira o genero novamente [M/F] {i + 1}: ')).lower().strip()
+
+    idade = int(input(f'Insira a idade da pessoa {i + 1}: '))
+
+    i = i + 1
+
+    if idade >= 18:
+        maior = maior + 1
+    if sexo == 'm':
+        homens = homens + 1
+    if sexo == 'f' and idade < 20:
+        mulheres = mulheres + 1
+
+    resp = str(input('\nDeseja continuar? [S/N]: ')).upper().strip()
+    while not (resp == 'S' or resp == 'N'):
+        resp = str(input('\nNao entendi sua resposta, Deseja continuar? [S/N]: ')).upper().strip()
+
+    if resp == 'N':
+        break
+
+print(f'\nNumero de pessoas maior de idade: {maior}')
+print(f'\nNumero de homens cadastrados: {homens}')
+print(f'\nNumero de mulheres com menos de 20 anos: {mulheres}')
+print(f'\nNumero de pessoas no total: {i}')
+print('\nTenha um bom dia!')

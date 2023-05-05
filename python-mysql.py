@@ -1,3 +1,5 @@
+#Conectado a um banco de dados MySQL
+
 import mysql.connector
 
 cnx = mysql.connector.connect(user='root', password='Pavoni77@',
